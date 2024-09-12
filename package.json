@@ -1,8 +1,8 @@
 {
   "name": "quasar-counter",
   "version": "0.0.1",
-  "description": "A Quasar Counter",
-  "productName": "Quasar Counter",
+  "description": "A Quasar Recorder",
+  "productName": "Quasar Recorder",
   "author": "Michael Korelov",
   "private": true,
   "scripts": {

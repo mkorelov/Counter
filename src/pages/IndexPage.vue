@@ -49,49 +49,48 @@
 
   let audioIn = { audio: true };
 
-    navigator.mediaDevices.getUserMedia(audioIn)
+  navigator.mediaDevices.getUserMedia(audioIn)
 
-      .then(function (mediaStreamObj) {
+  .then(function (mediaStreamObj) {
 
-        let start = document.getElementById('startButton');
+    let start = document.getElementById('startButton');
 
-        let stop = document.getElementById('stopButton');
+    let stop = document.getElementById('stopButton');
 
-        let playAudio = document.getElementById('audioControls');
+    let playAudio = document.getElementById('audioControls');
 
-        let mediaRecorder = new MediaRecorder(mediaStreamObj);
+    let mediaRecorder = new MediaRecorder(mediaStreamObj);
 
-        start.addEventListener('click', function (ev) {
-          mediaRecorder.start();
-        })
+    start.addEventListener('click', function (ev) {
+      mediaRecorder.start();
+    })
 
-        stop.addEventListener('click', function (ev) {
-          mediaRecorder.stop();
-        });
+    stop.addEventListener('click', function (ev) {
+      mediaRecorder.stop();
+    });
 
-        mediaRecorder.ondataavailable = function (ev) {
-          dataArray.push(ev.data);
-        }
+    mediaRecorder.ondataavailable = function (ev) {
+      dataArray.push(ev.data);
+    }
 
-        let dataArray = [];
+    let dataArray = [];
 
-        mediaRecorder.onstop = function (ev) {
+    mediaRecorder.onstop = function (ev) {
 
-          let audioData = new Blob(dataArray,
-                    { 'type': 'audio/mp3;' });
+      let audioData = new Blob(dataArray,
+        { 'type': 'audio/mp3;' });
 
-          dataArray = [];
+      dataArray = [];
 
-          let audioSrc = window.URL
-              .createObjectURL(audioData);
+      let audioSrc = window.URL.createObjectURL(audioData);
 
-          playAudio.src = audioSrc;
-        }
-      })
+      playAudio.src = audioSrc;
+    }
+  })
 
-      .catch(function (err) {
-        console.log(err.name, err.message);
-      });
+  .catch(function (err) {
+    console.log(err.name, err.message);
+  });
 
 </script>
 
