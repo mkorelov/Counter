@@ -1,6 +1,6 @@
 # Quasar Counter (quasar-counter)
 
-A Quasar Counter
+A Quasar Counter App
 
 ## Install the dependencies
 ```bash
