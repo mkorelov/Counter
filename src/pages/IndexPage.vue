@@ -10,7 +10,7 @@
 
           size="35px"
           round
-          color="red-14"
+          color="red-10"
           icon="mic"
           id="startButton"
 
@@ -20,7 +20,10 @@
 
       <div class="col-6 text-center">
 
-        <audio controls id="audioControls"></audio>
+        <audio
+          controls
+          id="audioControls">
+        </audio>
 
       </div>
 
@@ -30,7 +33,7 @@
 
           size="35px"
           round
-          color="red-14"
+          color="red-10"
           icon="front_hand"
           id="stopButton"
 
